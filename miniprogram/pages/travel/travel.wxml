@@ -1,0 +1,11 @@
+<view class="pg">
+  <view class="tabs"><text class="tb {{tab=='s'?'on':''}}" bindtap="onT" data-t="s">景区门票</text><text class="tb {{tab=='r'?'on':''}}" bindtap="onT" data-t="r">路线套餐</text></view>
+  <view wx:if="{{list.length===0}}" class="emp">暂无内容</view>
+  <view class="card" wx:for="{{list}}" wx:key="id" style="margin-bottom:20rpx">
+    <image class="ci" src="{{item.image}}" mode="aspectFill"/>
+    <view class="cb"><text class="cn">{{item.name}}</text><text class="cd">{{item.desc}}</text>
+      <view class="tags"><text class="tg" wx:for="{{item.tags}}" wx:key="*this">{{item}}</text></view>
+      <view class="cf"><text class="cp">¥{{item.price}}</text><view class="btn">购买</view></view>
+    </view>
+  </view>
+</view>

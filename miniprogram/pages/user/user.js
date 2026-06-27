@@ -1,0 +1,1 @@
+Page({goO:function(e){wx.navigateTo({url:"/pages/order/order?status="+(e.currentTarget.dataset.s||"all")});},logout:function(){wx.showModal({title:"确认退出",content:"确定要退出登录吗？",success:function(r){if(r.confirm){wx.removeStorageSync("token");wx.removeStorageSync("userInfo");wx.showToast({title:"已退出",icon:"none"});}}});}});

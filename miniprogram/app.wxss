@@ -1,0 +1,1 @@
+page{--p:#1F5FA8;--a:#E85D2F;--g:#52C41A;--t:#1A1A1A;--t2:#595959;--t3:#8C8C8C;--bg:#f5f5f5;--w:#fff;--b:#eee;--s:0 2rpx 16rpx rgba(0,0,0,0.05);--r:20rpx;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;font-size:28rpx;color:var(--t);background:var(--bg);box-sizing:border-box}

@@ -1,0 +1,8 @@
+<view class="pg">
+  <view class="tabs"><text class="tb {{ac=='all'?'on':''}}" bindtap="fl" data-s="all">全部</text><text class="tb {{ac=='pending'?'on':''}}" bindtap="fl" data-s="pending">待付款</text><text class="tb {{ac=='confirmed'?'on':''}}" bindtap="fl" data-s="confirmed">已确认</text><text class="tb {{ac=='done'?'on':''}}" bindtap="fl" data-s="done">已完成</text></view>
+  <view wx:if="{{filtered.length===0}}" class="emp">暂无订单</view>
+  <view class="oc" wx:for="{{filtered}}" wx:key="id">
+    <view class="ot"><text class="ono">{{item.no}}</text><text class="os">{{item.st}}</text></view>
+    <view class="og"><image class="oi" src="{{item.image}}" mode="aspectFill"/><view class="oin"><text class="onm">{{item.name}}</text><text class="opr">¥{{item.price}}</text></view></view>
+  </view>
+</view>

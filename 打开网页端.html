@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乌东文旅平台</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", sans-serif; background: #f5f5f5; }
+.top { background: linear-gradient(135deg, #1F5FA8, #0E3D75); color: #fff; text-align: center; padding: 60px 20px; }
+.top h1 { font-size: 36px; margin-bottom: 8px; }
+.top p { font-size: 16px; opacity: 0.85; }
+.cards { max-width: 900px; margin: -30px auto 40px; padding: 0 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card { background: #fff; border-radius: 12px; padding: 30px 20px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.08); text-decoration: none; color: #333; transition: all 0.3s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
+.card .icon { font-size: 48px; margin-bottom: 12px; }
+.card h3 { font-size: 18px; margin-bottom: 6px; color: #1A1A1A; }
+.card p { font-size: 13px; color: #8C8C8C; }
+.card .url { display: inline-block; margin-top: 10px; padding: 6px 16px; background: #1F5FA8; color: #fff; border-radius: 20px; font-size: 13px; }
+.status { max-width: 900px; margin: 0 auto 20px; padding: 0 20px; }
+.status-box { background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+.status-box h3 { font-size: 16px; margin-bottom: 12px; color: #1A1A1A; }
+.status-row { display: flex; align-items: center; padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+.status-row:last-child { border-bottom: none; }
+.status-dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 12px; }
+.dot-ok { background: #52C41A; }
+.dot-off { background: #d9d9d9; }
+.info { max-width: 900px; margin: 0 auto 40px; padding: 0 20px; }
+.info-box { background: #FFF7E6; border: 1px solid #FFD666; border-radius: 12px; padding: 16px 24px; font-size: 14px; color: #8C6D1F; }
+.info-box strong { color: #D48806; }
+.footer { text-align: center; padding: 20px; color: #8C8C8C; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>🏔️ 乌东文旅</h1>
+  <p>"衣、食、住、行"综合服务平台</p>
+</div>
+
+<div class="status">
+  <div class="status-box">
+    <h3>服务状态</h3>
+    <div class="status-row"><span class="status-dot dot-off" id="dot-backend"></span> 后端API —— http://localhost:3000</div>
+    <div class="status-row"><span class="status-dot dot-off" id="dot-web"></span> PC网页端 —— http://localhost:5173</div>
+    <div class="status-row"><span class="status-dot dot-off" id="dot-admin"></span> 管理后台 —— http://localhost:5174</div>
+    <div class="status-row"><span class="status-dot dot-off" id="dot-photo"></span> 照片资源 —— http://localhost:3000/uploads/</div>
+  </div>
+</div>
+
+<div class="cards">
+  <a href="http://localhost:5173" class="card" target="_blank">
+    <div class="icon">🌐</div>
+    <h3>PC 网页端</h3>
+    <p>浏览商品/餐厅/民宿/路线/游记</p>
+    <span class="url">打开网页端</span>
+  </a>
+  <a href="http://localhost:5174" class="card" target="_blank">
+    <div class="icon">⚙️</div>
+    <h3>管理后台</h3>
+    <p>数据看板 / 商家审核 / 内容管理</p>
+    <span class="url">打开管理后台</span>
+  </a>
+  <a href="http://localhost:3000/api/common/docs" class="card" target="_blank">
+    <div class="icon">🔌</div>
+    <h3>API 文档</h3>
+    <p>查看全部接口文档</p>
+    <span class="url">打开API文档</span>
+  </a>
+</div>
+
+<div class="info">
+  <div class="info-box">
+    <strong>⚠️ 提示：</strong>请先运行 <strong>"启动全部服务.bat"</strong> 启动后端服务后，再刷新本页面，上方状态指示灯会变绿。<br>
+    管理员账号：<strong>admin</strong> / 密码：<strong>123456</strong> &nbsp;|&nbsp; 测试用户：<strong>13800138001</strong> / <strong>123456</strong>
+  </div>
+</div>
+
+<div class="footer">© 2026 乌东文旅 · 贵州黔东南苗族侗族自治州</div>
+
+<script>
+// 自动检测服务是否在线
+const services = [
+  { id: 'dot-backend', url: 'http://localhost:3000/api/common/docs' },
+  { id: 'dot-web', url: 'http://localhost:5173' },
+  { id: 'dot-admin', url: 'http://localhost:5174' },
+  { id: 'dot-photo', url: 'http://localhost:3000/uploads/' },
+];
+function checkAll() {
+  services.forEach(s => {
+    fetch(s.url, { mode: 'no-cors' })
+      .then(() => document.getElementById(s.id).className = 'status-dot dot-ok')
+      .catch(() => document.getElementById(s.id).className = 'status-dot dot-off');
+  });
+}
+checkAll();
+setInterval(checkAll, 5000);
+</script>
+
+</body>
+</html>

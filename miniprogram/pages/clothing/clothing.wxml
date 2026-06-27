@@ -1,0 +1,14 @@
+<view class="pg">
+  <view class="search"><input class="si" placeholder="搜索非遗商品..." bindinput="onK" bindconfirm="onS"/><view class="sb" bindtap="onS">搜索</view></view>
+  <scroll-view class="cats" scroll-x="true" enhanced="true" show-scrollbar="false"><text class="ct {{ac==''?'on':''}}" bindtap="onC" data-c="">全部</text><text class="ct {{ac=='1'?'on':''}}" bindtap="onC" data-c="1">银饰</text><text class="ct {{ac=='2'?'on':''}}" bindtap="onC" data-c="2">蜡染</text><text class="ct {{ac=='3'?'on':''}}" bindtap="onC" data-c="3">苗绣</text><text class="ct {{ac=='4'?'on':''}}" bindtap="onC" data-c="4">服饰</text></scroll-view>
+  <view wx:if="{{loading}}" class="ld">加载中...</view>
+  <view wx:elif="{{list.length===0}}" class="emp">暂无商品</view>
+  <view class="grid" wx:else>
+    <view class="card" wx:for="{{list}}" wx:key="id">
+      <image class="ci" src="{{item.image}}" mode="aspectFill"/>
+      <view class="cb"><text class="cn">{{item.name||item.title}}</text>
+        <view class="cr"><text class="cp">¥{{item.price}}</text><text class="cs">已售{{item.sales}}</text></view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<view class="pg">
+  <view class="box"><image class="av" src="../../image/da799b99-8790-4198-bff5-0220fd8aa458.png" mode="aspectFill"/>
+    <text class="lt">乌东文旅</text><text class="ls">苗寨有银·文化有纹</text>
+    <input class="inp" placeholder="手机号" value="{{ph}}" bindinput="onPh" type="number"/>
+    <input class="inp" placeholder="密码" password="true" value="{{pw}}" bindinput="onPw"/>
+    <view class="lbtn" bindtap="doLogin">登 录</view>
+    <text class="hint">测试: 13800138001 / 123456</text>
+  </view>
+</view>

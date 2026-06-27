@@ -1,0 +1,8 @@
+<view class="pg">
+  <view class="hd"><image class="av2" src="../../image/da799b99-8790-4198-bff5-0220fd8aa458.png" mode="aspectFill"/><view class="ui"><text class="nn">旅行达人小王</text><text class="ph2">13800138001</text></view></view>
+  <view class="card2"><text class="ct2">我的订单</text>
+    <view class="or2"><view class="oi2" bindtap="goO" data-s="all"><text class="oic">📋</text><text class="oit">全部</text></view><view class="oi2" bindtap="goO" data-s="pending"><text class="oic">💰</text><text class="oit">待付款</text></view><view class="oi2" bindtap="goO" data-s="confirmed"><text class="oic">✅</text><text class="oit">已确认</text></view><view class="oi2" bindtap="goO" data-s="done"><text class="oic">📦</text><text class="oit">已完成</text></view></view>
+  </view>
+  <view class="card2"><view class="mr"><text>❤️ 我的收藏</text><text class="ar">></text></view><view class="mr"><text>👀 浏览记录</text><text class="ar">></text></view><view class="mr"><text>🎫 优惠券</text><text class="ar">></text></view><view class="mr" style="border:none"><text>📞 联系客服</text><text class="ar">></text></view></view>
+  <view class="lo" bindtap="logout">退出登录</view>
+</view>

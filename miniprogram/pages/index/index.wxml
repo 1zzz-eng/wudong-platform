@@ -1,0 +1,26 @@
+<view class="pg">
+  <view class="top"><text class="logo">乌东文旅</text><text class="sub">苗寨有银·文化有纹</text></view>
+  <view class="search"><input class="si" placeholder="搜索非遗商品、美食、民宿..." bindinput="onK" bindconfirm="onSearch"/><view class="sb" bindtap="onSearch">搜索</view></view>
+  <swiper class="sw" indicator-dots="true" indicator-active-color="#1F5FA8" autoplay="true" interval="3000" circular="true">
+    <swiper-item><image class="swi" src="../../image/cea73fd04e0b39c8f79b9223e533a9ea.jpg" mode="aspectFill"/><view class="swt">探秘黔东南非遗文化</view></swiper-item>
+    <swiper-item><image class="swi" src="../../image/32115ee982485549de7d6631b480c6c9.jpg" mode="aspectFill"/><view class="swt">品味地道苗家美食</view></swiper-item>
+    <swiper-item><image class="swi" src="../../image/1196398a4101347687e63ed06ee93bef.jpg" mode="aspectFill"/><view class="swt">苗寨云端木屋体验</view></swiper-item>
+  </swiper>
+  <view class="icons">
+    <view class="ic" bindtap="go" data-u="/pages/clothing/clothing"><view class="icb" style="background:#E8F1FB"><text class="icc">🏺</text></view><text class="ict">非遗商品</text></view>
+    <view class="ic" bindtap="go" data-u="/pages/food/food"><view class="icb" style="background:#FFF1EA"><text class="icc">🍲</text></view><text class="ict">美食餐饮</text></view>
+    <view class="ic" bindtap="go" data-u="/pages/hotel/hotel"><view class="icb" style="background:#F6FFED"><text class="icc">🏡</text></view><text class="ict">民宿预订</text></view>
+    <view class="ic" bindtap="go" data-u="/pages/travel/travel"><view class="icb" style="background:#FFF7E6"><text class="icc">🎫</text></view><text class="ict">票务路线</text></view>
+    <view class="ic" bindtap="go" data-u="/pages/community/community"><view class="icb" style="background:#F9F0FF"><text class="icc">📸</text></view><text class="ict">游记社区</text></view>
+  </view>
+  <view class="sec"><text class="st">热门推荐</text></view>
+  <view wx:if="{{loading}}" class="ld">加载中...</view>
+  <view class="grid" wx:else>
+    <view class="card" wx:for="{{list}}" wx:key="id" bindtap="goD" data-id="{{item.id}}">
+      <image class="ci" src="{{item.image}}" mode="aspectFill"/>
+      <view class="cb"><text class="cn">{{item.title}}</text>
+        <view class="cr"><text class="cp">¥{{item.price}}</text><text class="cs">已售{{item.sales}}</text></view>
+      </view>
+    </view>
+  </view>
+</view>

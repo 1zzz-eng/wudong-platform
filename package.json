@@ -1,0 +1,19 @@
+{
+  "name": "wudong-platform",
+  "version": "1.0.0",
+  "description": "> **苗族文化 × 数字文旅** — 为贵州乌东村打造的一站式文旅数字化服务平台",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "concurrently": "^10.0.3"
+  }
+}

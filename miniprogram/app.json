@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/clothing/clothing",
+    "pages/food/food",
+    "pages/hotel/hotel",
+    "pages/travel/travel",
+    "pages/community/community",
+    "pages/cart/cart",
+    "pages/order/order",
+    "pages/login/login",
+    "pages/user/user"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1F5FA8",
+    "navigationBarTitleText": "乌东文旅",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f5f5"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#1F5FA8",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/icons/home.png",
+        "selectedIconPath": "static/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/clothing/clothing",
+        "text": "分类",
+        "iconPath": "static/icons/category.png",
+        "selectedIconPath": "static/icons/category-active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "static/icons/message.png",
+        "selectedIconPath": "static/icons/message-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "static/icons/user.png",
+        "selectedIconPath": "static/icons/user-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

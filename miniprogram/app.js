@@ -1,0 +1,1 @@
+App({globalData:{token:null,userInfo:null},onLaunch:function(){var t=wx.getStorageSync("token");if(t)this.globalData.token=t;}});

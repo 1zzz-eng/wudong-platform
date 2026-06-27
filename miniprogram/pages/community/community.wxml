@@ -1,0 +1,9 @@
+<view class="pg">
+  <view class="st">旅行故事</view>
+  <view class="card" wx:for="{{list}}" wx:key="id" style="margin-bottom:20rpx">
+    <image class="ci" src="{{item.image}}" mode="aspectFill"/>
+    <view class="cb"><text class="cn">{{item.title}}</text><text class="cd l2">{{item.desc}}</text>
+      <view class="cf2"><text class="ft">❤️ {{item.likes}}</text><text class="ft">💬 {{item.comments}}</text><text class="ft">👀 {{item.views}}</text></view>
+    </view>
+  </view>
+</view>

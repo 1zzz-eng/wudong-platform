@@ -1,0 +1,12 @@
+<view class="pg">
+  <view wx:if="{{list.length===0}}" class="emp"><text class="ei">🛒</text><text class="et">购物车是空的</text></view>
+  <view wx:else>
+    <view class="ci2" wx:for="{{list}}" wx:key="id">
+      <image class="cim" src="{{item.image}}" mode="aspectFill"/>
+      <view class="cin"><text class="cit">{{item.name}}</text><text class="cip">¥{{item.price}}</text></view>
+      <view class="ciq"><view class="qb" bindtap="minus" data-id="{{item.id}}">-</view><text>{{item.qty}}</text><view class="qb" bindtap="plus" data-id="{{item.id}}">+</view></view>
+    </view>
+    <view class="fix"><view><text class="ft2">合计 </text><text class="fp">¥{{total}}</text></view><view class="fb" bindtap="checkout">去结算</view></view>
+    <view style="height:140rpx"></view>
+  </view>
+</view>
